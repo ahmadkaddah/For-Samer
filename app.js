@@ -122,17 +122,8 @@ function typeTerminal() {
 typeTerminal();
 
 document.getElementById('btnStart').addEventListener('click', function () {
-  // Direct play inside click handler — required for mobile audio unlock
-  const playPromise = song.play();
-  if (playPromise !== undefined) {
-    playPromise.catch(() => {
-      // If autoplay blocked, re-try once on next user interaction
-      document.addEventListener('touchstart', function retryPlay() {
-        song.play().catch(() => {});
-        document.removeEventListener('touchstart', retryPlay);
-      }, { once: true });
-    });
-  }
+  song.currentTime = 0;
+  song.play().catch(() => {});
   const screen = document.getElementById('startScreen');
   screen.classList.add('hidden');
   setTimeout(() => { screen.style.display = 'none'; }, 650);
