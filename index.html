@@ -6,7 +6,7 @@
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <title>عيد ميلاد سعيد</title>
+  <title>HBD</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -15,7 +15,10 @@
 
   <canvas id="burstCanvas"></canvas>
 
-  <audio id="birthdaySong" src="songg.mp3" preload="auto"></audio>
+  <audio id="birthdaySong" preload="auto">
+    <source src="songg.mp3" type="audio/mpeg" />
+    <source src="songg.ogg" type="audio/ogg" />
+  </audio>
 
   <div class="start-screen" id="startScreen">
     <div class="terminal">
